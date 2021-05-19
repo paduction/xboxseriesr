@@ -1,0 +1,11 @@
+[Unit]
+Description=Manage Leds of Xbox Series R when shutdown
+After=multi.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/usr/bin/python3 /home/pi/projectxbox/rpi_ws281x/python/examples/xboxledscript.py -s
+
+[Install]
+WantedBy=multi-user.target

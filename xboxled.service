@@ -1,0 +1,11 @@
+[Unit]
+Description=Manage Leds of Xbox Series R
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/projectxbox/rpi_ws281x/python/examples/xboxledscript.py -c
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
